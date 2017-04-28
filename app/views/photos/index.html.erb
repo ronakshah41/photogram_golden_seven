@@ -1,0 +1,17 @@
+<h1> All Photos </h1>
+
+<% @all_photos.each do |photo| %>
+
+  <p> <%= photo.caption %> </p>
+
+  <img width="600px" src = "<%= photo.source %>" >
+
+  <h5> <%= time_ago_in_words(photo.created_at) %> ago </h5>
+
+  <div>
+    <button> <a href="/photos/<%= photo.id %>/edit"> Edit </a> </button>
+
+    <button> <a href="delete_photo/<%= photo.id %>"> Delete </a> </button>
+  </div>
+
+<% end %>
